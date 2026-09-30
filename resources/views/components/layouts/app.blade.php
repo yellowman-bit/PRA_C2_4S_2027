@@ -8,7 +8,7 @@
 <x-navbar/>
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
 
         <div class="col-md-8">
             <x-header/>
@@ -34,12 +34,11 @@
 
         </div>
 
-        <div class="row">
-            <x-footer/>
-        </div>
-
     </div>
 
+    <div class="row justify-content-center">
+        <x-footer/>
+    </div>
 
 </div>
 
