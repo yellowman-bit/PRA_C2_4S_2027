@@ -6,6 +6,8 @@
         <p>{{ __('introduction_texts.homepage_line_3') }}</p>
     </x-slot:introduction_text>
 
+     <p class="welcome-name">Welkom, {{ $name }}</p>
+
     <h1>
         <x-slot:title>
             {{ __('misc.all_brands') }}
