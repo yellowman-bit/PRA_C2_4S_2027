@@ -1,11 +1,112 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+.homepage-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 1.5rem 1.25rem;
+    border-radius: 10px;
+    margin: 1rem 0 0.75rem;
+    min-height: 110px;
+}
+
+.homepage-hero__icon {
+    width: 62px;
+    height: 62px;
+    border: 2px solid #3aa3ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #3aa3ff;
+    background: rgba(58, 163, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.homepage-hero h2 {
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #2a8ad6;
+    line-height: 1.2;
+}
+
+.homepage-hero p {
+    margin: 0.25rem 0 0;
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+
+.welcome-name {
+    margin: 0.75rem 0 1.5rem;
+    font-size: 1.1rem;
+    color: #1f2937;
+    text-align: center;
+}
+
+.brands-section {
+    margin-top: 0.5rem;
+}
+
+.brands-section h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.brands-section p {
+    margin: 0.2rem 0 1rem;
+    color: #6b7280;
+}
+
+.brand-grid {
+    margin: 0 -0.75rem;
+}
+
+.brand-column {
+    margin-bottom: 1.25rem;
+    min-height: 180px;
+}
+
+.brand-column h3 {
+    margin: 0 0 0.75rem;
+    padding: 0.3rem 0 0.55rem;
+    border-bottom: 1px solid #dadfe5;
+    font-size: 2rem;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.brand-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.brand-column li {
+    padding: 0.18rem 0;
+    font-size: 0.95rem;
+}
+
+.brand-column a {
+    color: #2a8ad6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.brand-column a:hover {
+    text-decoration: underline;
+}
+
 :root {
     --blue: #3490dc;
     --indigo: #6574cd;
