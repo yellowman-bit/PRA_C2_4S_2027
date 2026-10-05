@@ -2,7 +2,7 @@
 
 <form>
     <div>
-        <label>Name</label>
+        <label>Naam</label>
         <input type="text" name="name">
     </div>
 
@@ -12,9 +12,9 @@
     </div>
 
     <div>
-        <label>Message</label>
+        <label>Bericht</label>
         <textarea name="message"></textarea>
     </div>
 
-    <button type="submit">Send</button>
+    <button type="submit">Verstuur</button>
 </form>
