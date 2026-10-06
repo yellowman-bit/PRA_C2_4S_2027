@@ -27,6 +27,13 @@
                     <li><a href="#">LinkedIn</a></li>
                 </ul>
             </div>
+
+            <div class="col-md-4">
+                <h4></h4>
+                <ul class="footer-list social-links">
+                    <a href="{{ route('contact') }}">Contact Pagina</a>
+                </ul>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -36,7 +43,7 @@
 </footer>
 
 
-<!-- analytics code -->              
+<!-- analytics code -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -51,10 +58,10 @@
 </script>
 <!-- Einde analytics code -->
 
-<script language="Javascript" type="text/javascript"> 
- 
- if (top.location!= self.location) { 
+<script language="Javascript" type="text/javascript">
+
+ if (top.location!= self.location) {
   top.location = self.location.href
- } 
- 
+ }
+
 </script>

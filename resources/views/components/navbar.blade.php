@@ -6,6 +6,10 @@
         </div>
         <div id="navbar" class="form-inline">
 
+            <ul class="footer-list social-links">
+                <a href="{{ route('contact') }}">Contact Pagina</a>
+            </ul>
+
             <script>
                 (function () {
                     var cx = 'partner-pub-6236044096491918:8149652050';
@@ -18,7 +22,6 @@
                 })();
             </script>
             <gcse:searchbox-only></gcse:searchbox-only>
-
 
         </div><!--/.navbar-collapse -->
     </div>
