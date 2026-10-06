@@ -13,6 +13,26 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
+    @if ($popularManuals->isNotEmpty())
+        <section class="popular-manuals">
+            <h2>{{ __('misc.popular_manuals') }}</h2>
+            <div class="manual-list">
+                @foreach ($popularManuals as $manual)
+                    @if ($manual->locally_available)
+                        <a class="manual-button" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">
+                            <span>{{ $manual->name }}</span>
+                            <small>{{ $manual->filesize_human_readable }}</small>
+                        </a>
+                    @else
+                        <a class="manual-button" href="{{ $manual->url }}" target="_blank" rel="noopener noreferrer" title="{{ $manual->name }}">
+                            <span>{{ $manual->name }}</span>
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+        </section>
+    @endif
+
     <div class="manual-list">
         @foreach ($manuals as $manual)
             @if ($manual->locally_available)
