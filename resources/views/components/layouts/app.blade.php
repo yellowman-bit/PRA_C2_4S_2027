@@ -36,11 +36,10 @@
 
     </div>
 
-    <div class="row justify-content-center">
-        <x-footer/>
-    </div>
 
 </div>
+
+    <x-footer/>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
