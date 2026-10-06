@@ -13,17 +13,19 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-
+    <div class="manual-list">
         @foreach ($manuals as $manual)
-
             @if ($manual->locally_available)
-                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                ({{$manual->filesize_human_readable}})
+                <a class="manual-button" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">
+                    <span>{{ $manual->name }}</span>
+                    <small>{{ $manual->filesize_human_readable }}</small>
+                </a>
             @else
-                <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
+                <a class="manual-button" href="{{ $manual->url }}" target="_blank" rel="noopener noreferrer" title="{{ $manual->name }}">
+                    <span>{{ $manual->name }}</span>
+                </a>
             @endif
-
-            <br />
         @endforeach
+    </div>
 
 </x-layouts.app>
