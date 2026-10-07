@@ -26,6 +26,7 @@ Productcat:		/category/12/Computers/
 */
 
 use App\Models\Brand;
+use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
@@ -37,8 +38,13 @@ use App\Http\Controllers\LocaleController;
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
+    $popularManuals = Manual::with('brand')
+        ->orderByDesc('views')
+        ->orderBy('id')
+        ->limit(10)
+        ->get();
     $name='Faisal';
-    return view('pages.homepage', compact('brands', 'name'));
+    return view('pages.homepage', compact('brands', 'popularManuals', 'name'));
 })->name('home');
 
 Route::get('/contact', function () {

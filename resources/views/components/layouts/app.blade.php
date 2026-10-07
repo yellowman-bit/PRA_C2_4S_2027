@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+@props(['popularManuals' => collect()])
 <head>
     <x-head/>
 </head>
@@ -22,6 +23,17 @@
             @if ( isset($_GET['q']) )
                 <x-search_results/>
             @else
+                @if ($popularManuals->isNotEmpty())
+                    <section class="popular-manuals">
+                        <h2>{{ __('misc.popular_manuals') }}</h2>
+                        <ul>
+                            @foreach ($popularManuals as $manual)
+                                <li>{{ $manual->brand->name }}:: {{ $manual->name }}</li>
+                            @endforeach
+                        </ul>
+                    </section>
+                @endif
+
                 {{ $slot }}
             @endif
 

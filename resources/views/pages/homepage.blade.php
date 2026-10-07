@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.app :popular-manuals="$popularManuals">
 
     <x-slot:introduction_text>
         <div class="homepage-hero">
