@@ -32,6 +32,7 @@
                 <h4></h4>
                 <ul class="footer-list social-links">
                     <a href="{{ route('contact') }}">Contact Pagina</a>
+                    <a href="{{ route('manualpage') }}">Contact Pagina</a>
                 </ul>
             </div>
         </div>
