@@ -5,14 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Manual extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'brand_id',
+        'name',
+        'filesize',
+        'originUrl',
+        'filename',
+        'downloadedServer',
+    ];
+
     public function brand(): BelongsTo
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function types(): BelongsToMany
+    {
+        return $this->belongsToMany(Type::class);
     }
 
     // Returns the filesize in a human readable format
