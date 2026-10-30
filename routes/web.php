@@ -29,11 +29,10 @@ use App\Models\Brand;
 use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
-use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ManualController;
-use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\Admin\ManualController as AdminManualController;
 
 // Homepage
 Route::get('/', function () {
@@ -65,10 +64,16 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
+
 // Short link for a manual
 Route::get('/link/{shortCode}', [ManualController::class, 'redirectShortLink'])
     ->where('shortCode', '[a-z0-9]{4}')
     ->name('manual.short');
+
+// Manual administration (authentication is intentionally not configured yet).
+Route::get('/admin/manuals/create', [AdminManualController::class, 'create'])->name('admin.manuals.create');
+Route::post('/admin/manuals', [AdminManualController::class, 'store'])->name('admin.manuals.store');
+
 
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);

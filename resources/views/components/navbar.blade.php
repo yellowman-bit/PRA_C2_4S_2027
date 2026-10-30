@@ -8,6 +8,7 @@
 
             <ul class="footer-list social-links">
                 <a href="{{ route('contact') }}">Contact Pagina</a>
+                <a href="{{ route('admin.manuals.create') }}">Handleiding toevoegen</a>
             </ul>
 
             <script>
