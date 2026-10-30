@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Manual;
 
 class ManualController extends Controller
 {
-    public function show($brand_id, $brand_slug, $manual_id )
+    public function redirectShortLink(string $shortCode)
     {
-        $brand = Brand::findOrFail($brand_id);
-        $manual = Manual::findOrFail($manual_id);
+        $manualId = (int) base_convert($shortCode, 36, 10);
+        $manual = Manual::findOrFail($manualId);
+
+        return redirect()->route('manual.show', [
+            'brandId' => $manual->brand_id,
+            'brandSlug' => $manual->brand->getNameUrlEncodedAttribute(),
+            'manualId' => $manual->id,
+        ]);
+    }
+
+    public function show(string $brandId, string $brandSlug, string $manualId)
+    {
+        $brand = Brand::findOrFail($brandId);
+        $manual = Manual::findOrFail($manualId);
 
         $manual->increment('views');
 

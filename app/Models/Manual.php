@@ -15,6 +15,17 @@ class Manual extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function getShortCodeAttribute(): string
+    {
+        $shortCode = base_convert((string) $this->getKey(), 10, 36);
+
+        if (strlen($shortCode) > 4) {
+            throw new \LogicException('The manual ID cannot be represented by a four-character short code.');
+        }
+
+        return str_pad($shortCode, 4, '0', STR_PAD_LEFT);
+    }
+
     // Returns the filesize in a human readable format
     public function getFilesizeHumanReadableAttribute(){
 

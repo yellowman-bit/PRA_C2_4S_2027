@@ -65,11 +65,16 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
+// Short link for a manual
+Route::get('/link/{shortCode}', [ManualController::class, 'redirectShortLink'])
+    ->where('shortCode', '[a-z0-9]{4}')
+    ->name('manual.short');
+
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
 // Detail page for a manual
-Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
+Route::get('/{brandId}/{brandSlug}/{manualId}/', [ManualController::class, 'show'])->name('manual.show');
 
 // Generate sitemaps
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
